@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IMPERIA V.I.S. | Event Staffing</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #050505;
+    border-bottom: 1px solid #c9a227;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #d4af37;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    display: block;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.92)),
+        radial-gradient(circle at center, #3a2b00, #050505 65%);
+}
+
+.hero h1 {
+    color: #d4af37;
+    font-size: clamp(45px, 9vw, 90px);
+    letter-spacing: 4px;
+}
+
+.hero h2 {
+    font-size: clamp(18px, 4vw, 30px);
+    margin: 15px 0;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #dddddd;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid #d4af37;
+    color: #080808;
+    background: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+.button.outline {
+    background: transparent;
+    color: #d4af37;
+}
+
+.button.outline:hover {
+    color: #080808;
+    background: #d4af37;
+}
+
+section {
+    padding: 80px 7%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.title h2 {
+    color: #d4af37;
+    font-size: 38px;
+}
+
+.title p {
+    color: #aaaaaa;
+    margin-top: 8px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111111;
+    border: 1px solid #3b321b;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #bbbbbb;
+}
+
+.locations {
+    background: #0d0d0d;
+    text-align: center;
+}
+
+.location-list {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    color: #d4af37;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.box {
+    background: #111111;
+    border: 1px solid #3b321b;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.box h2 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.box p {
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: #bbbbbb;
+    font-size: 17px;
+}
+
+.contact {
+    background: #0d0d0d;
+    text-align: center;
+}
+
+.contact-info {
+    margin: 20px auto 30px;
+    color: #cccccc;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+footer {
+    background: #050505;
+    border-top: 1px solid #3b321b;
+    padding: 35px 20px;
+    text-align: center;
+    color: #777777;
+}
+
+footer strong {
+    color: #d4af37;
+}
+
+@media (max-width: 750px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        IMPERIA V.I.S.
+        <span>EVENT STAFFING SERVICES</span>
+    </div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#services">SERVICES</a>
+        <a href="#clients">CLIENTS</a>
+        <a href="#team">JOIN OUR TEAM</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+    <div>
+
+        <h1>IMPERIA V.I.S.</h1>
+
+        <h2>EVENT STAFFING SERVICES</h2>
+
+        <p>
+            Professional event staffing for private,
+            corporate and special events.
+        </p>
+
+        <div class="buttons">
+
+            <a class="button" href="#clients">
+                REQUEST A QUOTE
+            </a>
+
+            <a class="button outline" href="tel:+13475007180">
+                CALL US
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="services">
+
+    <div class="title">
+
+        <h2>OUR SERVICES</h2>
+
+        <p>
+            Professional staff for your next event.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="card">
+
+            <h3>WAITERS & SERVERS</h3>
+
+            <p>
+                Professional servers for private parties,
+                corporate events and special occasions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>BARTENDERS</h3>
+
+            <p>
+                Experienced bartenders ready to provide
+                professional event service.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>EVENT STAFF</h3>
+
+            <p>
+                Reliable staff to support your guests
+                and help your event run smoothly.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>SECURITY SERVICES</h3>
+
+            <p>
+                Professional event security personnel
+                available for events requiring security.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="locations">
+
+    <div class="title">
+
+        <h2>AREAS WE SERVE</h2>
+
+    </div>
+
+
+    <div class="location-list">
+
+        <span>MARYLAND</span>
+
+        <span>WASHINGTON, D.C.</span>
+
+        <span>VIRGINIA</span>
+
+    </div>
+
+</section>
+
+
+<section id="clients">
+
+    <div class="split">
+
+
+        <div class="box">
+
+            <h2>FOR CLIENTS</h2>
+
+            <p>
+                Need professional staff for your next event?
+                Contact Imperia V.I.S. to discuss your staffing needs.
+            </p>
+
+            <a class="button" href="tel:+13475007180">
+                REQUEST A QUOTE
+            </a>
+
+        </div>
+
+
+        <div class="box" id="team">
+
+            <h2>JOIN OUR TEAM</h2>
+
+            <p>
+                Interested in working with Imperia V.I.S.?
+                We are looking for reliable event staff,
+                servers and bartenders.
+            </p>
+
+            <a class="button outline" href="tel:+13475007180">
+                APPLY NOW
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="title">
+
+            <h2>ABOUT IMPERIA V.I.S.</h2>
+
+        </div>
+
+        <p>
+            Imperia V.I.S. provides professional event staffing
+            services for private, corporate and special events.
+        </p>
+
+        <br>
+
+        <p>
+            Our services include waiters, bartenders,
+            event staff and security personnel across
+            Maryland, Washington, D.C. and Virginia.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+    <div class="title">
+
+        <h2>CONTACT IMPERIA V.I.S.</h2>
+
+        <p>
+            Let's talk about your next event.
+        </p>
+
+    </div>
+
+
+    <div class="contact-info">
+
+        <p>
+            📞 <strong>(347) 500-7180</strong>
+        </p>
+
+        <p>
+            📍 Maryland • Washington, D.C. • Virginia
+        </p>
+
+    </div>
+
+
+    <a class="button" href="tel:+13475007180">
+        CALL IMPERIA V.I.S.
+    </a>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>IMPERIA V.I.S.</strong>
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
