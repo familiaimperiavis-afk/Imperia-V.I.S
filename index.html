@@ -4,281 +4,775 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IMPERIA V.I.S. | Event Staffing</title>
+<title>IMPERIA V.I.S. | Event Staffing & Security Services</title>
+
+<meta name="description" content="IMPERIA V.I.S. provides professional event staffing, hospitality, logistics, event support and security services throughout Maryland, Washington D.C. and Virginia.">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+:root{
+    --gold:#d9ad32;
+    --gold2:#f0c95c;
+    --black:#050505;
+    --dark:#0b0b0b;
+    --gray:#bdbdbd;
+    --white:#ffffff;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #080808;
-    color: #ffffff;
-    line-height: 1.6;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #050505;
-    border-bottom: 1px solid #c9a227;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
 }
 
-.logo {
-    color: #d4af37;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-.logo span {
-    display: block;
-    color: white;
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-top: 2px;
+img{
+    width:100%;
+    display:block;
 }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.container{
+    width:92%;
+    max-width:1250px;
+    margin:auto;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 13px;
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(3,3,3,.97);
+    border-bottom:1px solid #6e5719;
+    backdrop-filter:blur(12px);
 }
 
-nav a:hover {
-    color: #d4af37;
+.navbar{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
-.hero {
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px;
+.logo{
+    color:var(--gold);
+    font-family:Georgia,serif;
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:1px;
+    white-space:nowrap;
+}
+
+.logo small{
+    display:block;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    font-size:8px;
+    letter-spacing:2px;
+    text-align:center;
+    margin-top:-3px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:27px;
+}
+
+nav a{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    color:#eee;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+.quote-nav{
+    background:linear-gradient(135deg,#e9bd4b,#c99922);
+    color:#080808!important;
+    padding:13px 21px;
+    border-radius:4px;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:600px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+
     background:
-        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.92)),
-        radial-gradient(circle at center, #3a2b00, #050505 65%);
+    linear-gradient(90deg,
+        rgba(0,0,0,.88) 0%,
+        rgba(0,0,0,.62) 43%,
+        rgba(0,0,0,.25) 100%),
+    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
 }
 
-.hero h1 {
-    color: #d4af37;
-    font-size: clamp(45px, 9vw, 90px);
-    letter-spacing: 4px;
+.hero-content{
+    width:58%;
+    padding:90px 0;
 }
 
-.hero h2 {
-    font-size: clamp(18px, 4vw, 30px);
-    margin: 15px 0;
-    letter-spacing: 3px;
+.crown{
+    color:var(--gold);
+    font-size:64px;
+    line-height:1;
+    margin-bottom:5px;
 }
 
-.hero p {
-    max-width: 700px;
-    margin: 0 auto 30px;
-    color: #dddddd;
-    font-size: 18px;
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:70px;
+    line-height:1;
+    letter-spacing:1px;
+    color:#e4b83e;
+    text-shadow:0 3px 15px #000;
 }
 
-.buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
+.hero h2{
+    margin-top:12px;
+    font-size:21px;
+    letter-spacing:3px;
+    font-weight:normal;
 }
 
-.button {
-    display: inline-block;
-    padding: 14px 28px;
-    border: 1px solid #d4af37;
-    color: #080808;
-    background: #d4af37;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: .3s;
+.gold-line{
+    width:350px;
+    max-width:80%;
+    height:2px;
+    background:var(--gold);
+    margin:22px 0;
 }
 
-.button:hover {
-    background: #ffffff;
-    border-color: #ffffff;
+.hero-slogan{
+    font-family:Georgia,serif;
+    font-size:27px;
+    letter-spacing:2px;
+    margin-bottom:12px;
 }
 
-.button.outline {
-    background: transparent;
-    color: #d4af37;
+.locations{
+    color:#e7c55c;
+    letter-spacing:2px;
+    font-size:15px;
 }
 
-.button.outline:hover {
-    color: #080808;
-    background: #d4af37;
+.buttons{
+    display:flex;
+    gap:18px;
+    margin-top:28px;
+    flex-wrap:wrap;
 }
 
-section {
-    padding: 80px 7%;
+.btn{
+    display:inline-block;
+    padding:15px 27px;
+    border:1px solid var(--gold);
+    color:#fff;
+    text-transform:uppercase;
+    font-weight:bold;
+    letter-spacing:.5px;
+    border-radius:4px;
+    transition:.3s;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 45px;
+.btn-gold{
+    background:linear-gradient(135deg,#edc352,#c89b25);
+    color:#050505;
 }
 
-.title h2 {
-    color: #d4af37;
-    font-size: 38px;
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 25px rgba(217,173,50,.25);
 }
 
-.title p {
-    color: #aaaaaa;
-    margin-top: 8px;
+/* ================= TITLES ================= */
+
+.section{
+    padding:70px 0;
 }
 
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.section-title{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-size:36px;
+    margin-bottom:12px;
 }
 
-.card {
-    background: #111111;
-    border: 1px solid #3b321b;
-    padding: 35px 25px;
-    text-align: center;
-    border-radius: 8px;
-    transition: .3s;
+.section-title span{
+    color:var(--gold);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #d4af37;
+.section-subtitle{
+    text-align:center;
+    color:#aaa;
+    max-width:700px;
+    margin:0 auto 38px;
 }
 
-.card h3 {
-    color: #d4af37;
-    margin-bottom: 12px;
+/* ================= SERVICES ================= */
+
+.services{
+    background:#070707;
 }
 
-.card p {
-    color: #bbbbbb;
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:13px;
 }
 
-.locations {
-    background: #0d0d0d;
-    text-align: center;
+.service-card{
+    border:1px solid #8f7124;
+    background:#111;
+    overflow:hidden;
+    transition:.3s;
 }
 
-.location-list {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
-    color: #d4af37;
-    font-size: 20px;
-    font-weight: bold;
+.service-card:hover{
+    transform:translateY(-6px);
+    border-color:#f1cc61;
+    box-shadow:0 12px 35px rgba(218,174,50,.15);
 }
 
-.split {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.service-img{
+    height:170px;
+    object-fit:cover;
 }
 
-.box {
-    background: #111111;
-    border: 1px solid #3b321b;
-    padding: 40px;
-    border-radius: 8px;
+.service-card-content{
+    padding:15px 10px;
+    text-align:center;
+    min-height:110px;
 }
 
-.box h2 {
-    color: #d4af37;
-    margin-bottom: 15px;
+.service-icon{
+    color:var(--gold);
+    font-size:27px;
+    margin-bottom:6px;
 }
 
-.box p {
-    color: #bbbbbb;
-    margin-bottom: 20px;
+.service-card h3{
+    font-size:14px;
+    text-transform:uppercase;
+    line-height:1.3;
 }
 
-.about {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+.service-card p{
+    color:#aaa;
+    font-size:11px;
+    margin-top:6px;
 }
 
-.about p {
-    color: #bbbbbb;
-    font-size: 17px;
+/* ================= EXTENDED SERVICES ================= */
+
+.extended{
+    background:#0a0a0a;
 }
 
-.contact {
-    background: #0d0d0d;
-    text-align: center;
+.extended-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.contact-info {
-    margin: 20px auto 30px;
-    color: #cccccc;
+.ext-card{
+    border:1px solid #54451c;
+    padding:28px;
+    background:linear-gradient(145deg,#101010,#070707);
 }
 
-.contact-info p {
-    margin: 8px 0;
+.ext-card h3{
+    color:var(--gold);
+    font-family:Georgia,serif;
+    font-size:21px;
+    margin-bottom:15px;
 }
 
-footer {
-    background: #050505;
-    border-top: 1px solid #3b321b;
-    padding: 35px 20px;
-    text-align: center;
-    color: #777777;
+.ext-card ul{
+    list-style:none;
 }
 
-footer strong {
-    color: #d4af37;
+.ext-card li{
+    color:#ddd;
+    margin:8px 0;
+    font-size:14px;
 }
 
-@media (max-width: 750px) {
+.ext-card li::before{
+    content:"✓";
+    color:var(--gold);
+    font-weight:bold;
+    margin-right:9px;
+}
 
-    header {
-        flex-direction: column;
-        gap: 12px;
+/* ================= AREAS ================= */
+
+.areas{
+    position:relative;
+    background:
+    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+}
+
+.area-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.area{
+    text-align:center;
+    padding:25px;
+    border:1px solid rgba(217,173,50,.45);
+    background:rgba(0,0,0,.55);
+}
+
+.area-icon{
+    font-size:45px;
+    color:var(--gold);
+}
+
+.area h3{
+    margin-top:8px;
+    color:#fff;
+    font-family:Georgia,serif;
+}
+
+/* ================= TWO PANELS ================= */
+
+.two-panels{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.panel{
+    min-height:430px;
+    padding:60px 8%;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.panel::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.68);
+}
+
+.panel-content{
+    position:relative;
+    z-index:2;
+}
+
+.panel.client{
+    background-image:url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85");
+}
+
+.panel.team{
+    background-image:url("https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=85");
+}
+
+.panel h2{
+    font-family:Georgia,serif;
+    font-size:31px;
+    margin-bottom:10px;
+}
+
+.panel h2 span{
+    color:var(--gold);
+}
+
+.panel p{
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+.panel ul{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.panel li{
+    margin:8px 0;
+    color:#eee;
+}
+
+.panel li::before{
+    content:"✓";
+    color:var(--gold);
+    margin-right:9px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#050505;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:55px;
+    align-items:center;
+}
+
+.about-text h2{
+    font-family:Georgia,serif;
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.about-text h2 span{
+    color:var(--gold);
+}
+
+.about-text p{
+    color:#ccc;
+    margin-bottom:17px;
+    font-size:15px;
+}
+
+.marketing{
+    color:#e3bb49!important;
+    font-size:19px!important;
+    font-family:Georgia,serif;
+}
+
+.values{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.value{
+    border:1px solid #63501f;
+    padding:23px 10px;
+    text-align:center;
+    background:#0b0b0b;
+}
+
+.value-icon{
+    font-size:31px;
+    color:var(--gold);
+}
+
+.value h3{
+    font-size:12px;
+    text-transform:uppercase;
+    margin-top:8px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:
+    linear-gradient(rgba(0,0,0,.87),rgba(0,0,0,.93)),
+    url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+}
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-box h2{
+    font-family:Georgia,serif;
+    font-size:45px;
+    color:var(--gold);
+}
+
+.contact-box p{
+    color:#bbb;
+    margin:10px 0 30px;
+}
+
+.contact-info{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+}
+
+.contact-item{
+    border:1px solid #68521c;
+    padding:17px 25px;
+    min-width:230px;
+    background:rgba(0,0,0,.55);
+}
+
+.contact-item strong{
+    display:block;
+    color:var(--gold);
+    margin-bottom:4px;
+}
+
+.contact-item a{
+    color:#fff;
+}
+
+.contact-item a:hover{
+    color:var(--gold);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#020202;
+    border-top:1px solid #5e4b19;
+    padding:50px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:40px;
+    align-items:start;
+}
+
+.footer-logo{
+    font-family:Georgia,serif;
+    color:var(--gold);
+    font-size:31px;
+}
+
+.footer h3{
+    color:var(--gold);
+    margin-bottom:15px;
+    font-family:Georgia,serif;
+}
+
+.footer p{
+    color:#999;
+    font-size:14px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:7px 0;
+    color:#aaa;
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.social{
+    width:42px;
+    height:42px;
+    border:1px solid #8a6b20;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    border-radius:50%;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.social:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+.copyright{
+    text-align:center;
+    color:#777;
+    border-top:1px solid #222;
+    margin-top:35px;
+    padding-top:25px;
+    font-size:13px;
+}
+
+.copyright strong{
+    color:var(--gold);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    nav{
+        gap:13px;
     }
 
-    nav {
-        gap: 12px;
+    nav a{
+        font-size:10px;
     }
 
-    nav a {
-        margin: 0;
-        font-size: 11px;
+    .services-grid{
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .hero {
-        min-height: 75vh;
+    .hero-content{
+        width:70%;
     }
 
-    .split {
-        grid-template-columns: 1fr;
+    .hero h1{
+        font-size:55px;
+    }
+}
+
+@media(max-width:700px){
+
+    header{
+        position:relative;
     }
 
-    section {
-        padding: 60px 5%;
+    .navbar{
+        padding:15px 0;
+        flex-direction:column;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:12px 16px;
+    }
+
+    .quote-nav{
+        padding:9px 13px;
+    }
+
+    .hero{
+        min-height:650px;
+        background-position:center;
+    }
+
+    .hero-content{
+        width:100%;
+        text-align:center;
+        padding:70px 5%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h2{
+        font-size:16px;
+    }
+
+    .hero-slogan{
+        font-size:21px;
+    }
+
+    .gold-line{
+        margin:20px auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .service-img{
+        height:145px;
+    }
+
+    .extended-grid{
+        grid-template-columns:1fr;
+    }
+
+    .area-grid{
+        grid-template-columns:1fr;
+    }
+
+    .two-panels{
+        grid-template-columns:1fr;
+    }
+
+    .panel{
+        min-height:420px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .socials{
+        justify-content:center;
+    }
+
+    .section{
+        padding:55px 0;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .contact-box h2{
+        font-size:36px;
+    }
+}
+
+@media(max-width:420px){
+
+    .services-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .service-card-content{
+        min-height:100px;
+    }
+
+    .service-card h3{
+        font-size:11px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .logo{
+        font-size:22px;
     }
 }
 </style>
@@ -286,257 +780,640 @@ footer strong {
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+<div class="container navbar">
 
-    <div class="logo">
-        IMPERIA V.I.S.
-        <span>EVENT STAFFING SERVICES</span>
-    </div>
+<a href="#home" class="logo">
+    IMPERIA V.I.S.
+    <small>EVENT STAFFING & SECURITY SERVICES</small>
+</a>
 
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#services">SERVICES</a>
-        <a href="#clients">CLIENTS</a>
-        <a href="#team">JOIN OUR TEAM</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#clients">For Clients</a>
+    <a href="#team">Join Our Team</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="quote-nav">Request a Quote</a>
+</nav>
 
+</div>
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
 
-    <div>
+<div class="container">
 
-        <h1>IMPERIA V.I.S.</h1>
+<div class="hero-content">
 
-        <h2>EVENT STAFFING SERVICES</h2>
+<div class="crown">♛</div>
 
-        <p>
-            Professional event staffing for private,
-            corporate and special events.
-        </p>
+<h1>IMPERIA V.I.S.</h1>
 
-        <div class="buttons">
+<h2>EVENT STAFFING & SECURITY SERVICES</h2>
 
-            <a class="button" href="#clients">
-                REQUEST A QUOTE
-            </a>
+<div class="gold-line"></div>
 
-            <a class="button outline" href="tel:+13475007180">
-                CALL US
-            </a>
+<div class="hero-slogan">
+PROFESSIONAL PEOPLE<br>
+FOR SUCCESSFUL EVENTS
+</div>
 
-        </div>
+<div class="locations">
+MARYLAND &nbsp; | &nbsp; WASHINGTON, D.C. &nbsp; | &nbsp; VIRGINIA
+</div>
 
-    </div>
+<div class="buttons">
 
+<a href="#contact" class="btn btn-gold">
+REQUEST A QUOTE &nbsp; →
+</a>
+
+<a href="#team" class="btn">
+JOIN OUR TEAM &nbsp; →
+</a>
+
+</div>
+
+</div>
+
+</div>
 </section>
 
 
-<section id="services">
+<!-- ================= SERVICES ================= -->
 
-    <div class="title">
+<section class="section services" id="services">
 
-        <h2>OUR SERVICES</h2>
+<div class="container">
 
-        <p>
-            Professional staff for your next event.
-        </p>
+<h2 class="section-title">
+OUR <span>SERVICES</span>
+</h2>
 
-    </div>
+<p class="section-subtitle">
+Professional event staffing and operational support designed to help your event run smoothly from start to finish.
+</p>
 
+<div class="services-grid">
 
-    <div class="services">
+<div class="service-card">
+<img class="service-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=85">
+<div class="service-card-content">
+<div class="service-icon">🛡</div>
+<h3>Security Personnel</h3>
+<p>Professional event security and access support.</p>
+</div>
+</div>
 
+<div class="service-card">
+<img class="service-img" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=85">
+<div class="service-card-content">
+<div class="service-icon">🍸</div>
+<h3>Bartenders</h3>
+<p>Professional bar and beverage service staff.</p>
+</div>
+</div>
 
-        <div class="card">
+<div class="service-card">
+<img class="service-img" src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=700&q=85">
+<div class="service-card-content">
+<div class="service-icon">🍽</div>
+<h3>Servers</h3>
+<p>Reliable hospitality and food service personnel.</p>
+</div>
+</div>
 
-            <h3>WAITERS & SERVERS</h3>
+<div class="service-card">
+<img class="service-img" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=700&q=85">
+<div class="service-card-content">
+<div class="service-icon">🎟</div>
+<h3>Event Attendants</h3>
+<p>Hosts, ushers, registration and guest support.</p>
+</div>
+</div>
 
-            <p>
-                Professional servers for private parties,
-                corporate events and special occasions.
-            </p>
+<div class="service-card">
+<img class="service-img" src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=700&q=85">
+<div class="service-card-content">
+<div class="service-icon">👥</div>
+<h3>Crowd / Event Support</h3>
+<p>Professional support for large and small events.</p>
+</div>
+</div>
 
-        </div>
+<div class="service-card">
+<img class="service-img" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=700&q=85">
+<div class="service-card-content">
+<div class="service-icon">👤</div>
+<h3>Event Staff</h3>
+<p>Flexible staffing solutions for your event.</p>
+</div>
+</div>
 
-
-        <div class="card">
-
-            <h3>BARTENDERS</h3>
-
-            <p>
-                Experienced bartenders ready to provide
-                professional event service.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>EVENT STAFF</h3>
-
-            <p>
-                Reliable staff to support your guests
-                and help your event run smoothly.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>SECURITY SERVICES</h3>
-
-            <p>
-                Professional event security personnel
-                available for events requiring security.
-            </p>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
-<section class="locations">
+<!-- ================= EXTENDED SERVICES ================= -->
 
-    <div class="title">
+<section class="section extended">
 
-        <h2>AREAS WE SERVE</h2>
+<div class="container">
 
-    </div>
+<h2 class="section-title">
+COMPLETE <span>EVENT SERVICES</span>
+</h2>
 
+<p class="section-subtitle">
+From the first guest arrival to the final breakdown, IMPERIA V.I.S. can provide professional personnel for multiple areas of event operations.
+</p>
 
-    <div class="location-list">
+<div class="extended-grid">
 
-        <span>MARYLAND</span>
+<div class="ext-card">
+<h3>1. Event Staffing</h3>
+<ul>
+<li>General event staff</li>
+<li>Convention staff</li>
+<li>Conference staff</li>
+<li>Fair & exhibition staff</li>
+<li>Floor guides & orientation staff</li>
+<li>Registration assistants</li>
+<li>Access control</li>
+<li>Queue management</li>
+<li>Hosts & hostesses</li>
+<li>Ushers / seaters</li>
+<li>Load-in & load-out staff</li>
+<li>Festival & concert staff</li>
+<li>Corporate event staff</li>
+<li>Bilingual English / Spanish staff</li>
+</ul>
+</div>
 
-        <span>WASHINGTON, D.C.</span>
+<div class="ext-card">
+<h3>2. Hospitality Staff</h3>
+<ul>
+<li>Servers</li>
+<li>Bartenders</li>
+<li>Barbacks</li>
+<li>Runners</li>
+<li>Bussers</li>
+<li>Captain servers</li>
+<li>Kitchen support</li>
+<li>Prep cooks</li>
+<li>Dishwashers</li>
+<li>Food handlers</li>
+<li>Coffee break staff</li>
+<li>VIP & executive service</li>
+<li>Banquet teams</li>
+<li>Private event service</li>
+</ul>
+</div>
 
-        <span>VIRGINIA</span>
+<div class="ext-card">
+<h3>3. Logistics & Operations</h3>
+<ul>
+<li>Event setup & breakdown</li>
+<li>Basic staging support</li>
+<li>Equipment setup</li>
+<li>Signage installation</li>
+<li>Access & entrance supervision</li>
+<li>Material movement</li>
+<li>Event storage support</li>
+<li>Vendor coordination</li>
+<li>Production support</li>
+<li>Event runners</li>
+<li>Backstage assistance</li>
+<li>Stagehand support</li>
+</ul>
+</div>
 
-    </div>
+<div class="ext-card">
+<h3>4. Cleaning & Maintenance</h3>
+<ul>
+<li>Pre-event cleaning</li>
+<li>Continuous event cleaning</li>
+<li>Restroom cleaning</li>
+<li>Trash collection</li>
+<li>Post-event deep cleaning</li>
+<li>Common-area sanitation</li>
+<li>Light maintenance personnel</li>
+<li>Venue support personnel</li>
+</ul>
+</div>
 
+<div class="ext-card">
+<h3>5. Event Support</h3>
+<ul>
+<li>Room monitors</li>
+<li>Entrance supervision</li>
+<li>Door supervision</li>
+<li>Internal event monitoring</li>
+<li>Queue control</li>
+<li>VIP area support</li>
+<li>Event material custody</li>
+<li>Guest assistance</li>
+<li>Backstage support</li>
+</ul>
+</div>
+
+<div class="ext-card">
+<h3>6. Coordination & Management</h3>
+<ul>
+<li>Floor coordinators</li>
+<li>Event supervisors</li>
+<li>Event coordinators</li>
+<li>Schedule management</li>
+<li>Time & agenda control</li>
+<li>Vendor coordination</li>
+<li>Basic logistics planning</li>
+<li>Event production support</li>
+<li>On-site management</li>
+</ul>
+</div>
+
+<div class="ext-card">
+<h3>7. Specialized Event Services</h3>
+<ul>
+<li>Conventions & expos</li>
+<li>Corporate meetings</li>
+<li>Credential distribution</li>
+<li>Guest registration</li>
+<li>Information desk support</li>
+<li>VIP guest assistance</li>
+<li>Exhibitor support</li>
+<li>Conference support</li>
+<li>Bilingual event support</li>
+</ul>
+</div>
+
+<div class="ext-card">
+<h3>8. Corporate Support</h3>
+<ul>
+<li>Receptionists</li>
+<li>Administrative assistants</li>
+<li>Temporary personnel</li>
+<li>Office support staff</li>
+<li>Inventory personnel</li>
+<li>General workplace support</li>
+<li>Event administrative support</li>
+</ul>
+</div>
+
+<div class="ext-card">
+<h3>9. Bilingual Staffing</h3>
+<ul>
+<li>English / Spanish personnel</li>
+<li>Bilingual event attendants</li>
+<li>Bilingual hosts & hostesses</li>
+<li>Guest assistance</li>
+<li>Registration support</li>
+<li>Customer-facing event staff</li>
+</ul>
+</div>
+
+</div>
+</div>
 </section>
 
 
-<section id="clients">
+<!-- ================= AREAS ================= -->
 
-    <div class="split">
+<section class="section areas">
 
+<div class="container">
 
-        <div class="box">
+<h2 class="section-title">
+AREAS <span>WE SERVE</span>
+</h2>
 
-            <h2>FOR CLIENTS</h2>
+<div class="area-grid">
 
-            <p>
-                Need professional staff for your next event?
-                Contact Imperia V.I.S. to discuss your staffing needs.
-            </p>
+<div class="area">
+<div class="area-icon">🏙</div>
+<h3>MARYLAND</h3>
+<p>Professional event staffing throughout Maryland.</p>
+</div>
 
-            <a class="button" href="tel:+13475007180">
-                REQUEST A QUOTE
-            </a>
+<div class="area">
+<div class="area-icon">🏛</div>
+<h3>WASHINGTON, D.C.</h3>
+<p>Event personnel for corporate and special events.</p>
+</div>
 
-        </div>
+<div class="area">
+<div class="area-icon">⭐</div>
+<h3>VIRGINIA</h3>
+<p>Flexible staffing solutions for events of all sizes.</p>
+</div>
 
+</div>
 
-        <div class="box" id="team">
-
-            <h2>JOIN OUR TEAM</h2>
-
-            <p>
-                Interested in working with Imperia V.I.S.?
-                We are looking for reliable event staff,
-                servers and bartenders.
-            </p>
-
-            <a class="button outline" href="tel:+13475007180">
-                APPLY NOW
-            </a>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 
-<section id="about">
+<!-- ================= CLIENTS / TEAM ================= -->
 
-    <div class="about">
+<div class="two-panels">
 
-        <div class="title">
+<section class="panel client" id="clients">
 
-            <h2>ABOUT IMPERIA V.I.S.</h2>
+<div class="panel-content">
 
-        </div>
+<h2>FOR <span>CLIENTS</span></h2>
 
-        <p>
-            Imperia V.I.S. provides professional event staffing
-            services for private, corporate and special events.
-        </p>
+<p>
+Let IMPERIA V.I.S. provide the right people for your next event.
+</p>
 
-        <br>
+<ul>
+<li>Reliable and professional staff</li>
+<li>Flexible staffing solutions</li>
+<li>Events of all sizes</li>
+<li>Hospitality & event support</li>
+<li>Bilingual personnel available</li>
+<li>Fast and simple booking process</li>
+</ul>
 
-        <p>
-            Our services include waiters, bartenders,
-            event staff and security personnel across
-            Maryland, Washington, D.C. and Virginia.
-        </p>
+<a href="#contact" class="btn btn-gold">
+REQUEST A QUOTE →
+</a>
 
-    </div>
-
+</div>
 </section>
 
 
-<section class="contact" id="contact">
+<section class="panel team" id="team">
 
-    <div class="title">
+<div class="panel-content">
 
-        <h2>CONTACT IMPERIA V.I.S.</h2>
+<h2>JOIN <span>OUR TEAM</span></h2>
 
-        <p>
-            Let's talk about your next event.
-        </p>
+<p>
+Become part of a professional and growing event staffing team.
+</p>
 
-    </div>
+<ul>
+<li>Competitive opportunities</li>
+<li>Multiple event opportunities</li>
+<li>Work throughout MD, D.C. & VA</li>
+<li>Bilingual opportunities available</li>
+<li>Flexible schedules</li>
+<li>Professional event environments</li>
+</ul>
 
+<a href="#contact" class="btn btn-gold">
+APPLY NOW →
+</a>
 
-    <div class="contact-info">
-
-        <p>
-            📞 <strong>(347) 500-7180</strong>
-        </p>
-
-        <p>
-            📍 Maryland • Washington, D.C. • Virginia
-        </p>
-
-    </div>
-
-
-    <a class="button" href="tel:+13475007180">
-        CALL IMPERIA V.I.S.
-    </a>
-
+</div>
 </section>
 
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<h2>
+ABOUT <span>IMPERIA V.I.S.</span>
+</h2>
+
+<p class="marketing">
+WE DON'T JUST PROVIDE STAFF — WE HELP CREATE EVENTS PEOPLE REMEMBER.
+</p>
+
+<p>
+IMPERIA V.I.S. is a professional event staffing company providing reliable people and operational support for private, corporate and special events throughout Maryland, Washington, D.C. and Virginia.
+</p>
+
+<p>
+Our goal is simple: connect every event with dependable, professional and service-minded personnel who understand the importance of presentation, organization and guest experience.
+</p>
+
+<p>
+From hospitality and event attendants to logistics, operations, crowd support and specialized staffing, our team is built to adapt to the needs of each client and each event.
+</p>
+
+<p>
+Whether you are planning a private celebration, corporate event, convention, festival, conference or large-scale production, IMPERIA V.I.S. is ready to help you build the team your event needs.
+</p>
+
+</div>
+
+
+<div class="values">
+
+<div class="value">
+<div class="value-icon">🤝</div>
+<h3>Professional Service</h3>
+</div>
+
+<div class="value">
+<div class="value-icon">🏆</div>
+<h3>Reliable Staff</h3>
+</div>
+
+<div class="value">
+<div class="value-icon">👥</div>
+<h3>Diverse Opportunities</h3>
+</div>
+
+<div class="value">
+<div class="value-icon">🛡</div>
+<h3>Committed To Excellence</h3>
+</div>
+
+<div class="value">
+<div class="value-icon">⭐</div>
+<h3>Client Focused</h3>
+</div>
+
+<div class="value">
+<div class="value-icon">🌎</div>
+<h3>Bilingual Support</h3>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact" id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>CONTACT IMPERIA V.I.S.</h2>
+
+<p>
+Let's talk about your next event.
+Request a quote, ask about staffing or join our team.
+</p>
+
+<div class="contact-info">
+
+<div class="contact-item">
+<strong>📞 PHONE</strong>
+<a href="tel:+13475007180">
+347-500-7180
+</a>
+</div>
+
+<div class="contact-item">
+<strong>✉ GMAIL</strong>
+<a href="mailto:familiaimperiavIS@gmail.com">
+familiaimperiavIS@gmail.com
+</a>
+</div>
+
+<div class="contact-item">
+<strong>📍 SERVICE AREA</strong>
+<span>Maryland • Washington, D.C. • Virginia</span>
+</div>
+
+</div>
+
+<div class="buttons">
+
+<a
+href="https://wa.me/13475007180?text=Hello%20IMPERIA%20V.I.S.,%20I%20would%20like%20to%20request%20a%20quote."
+target="_blank"
+class="btn btn-gold">
+💬 REQUEST VIA WHATSAPP
+</a>
+
+<a
+href="mailto:familiaimperiavIS@gmail.com?subject=IMPERIA%20V.I.S.%20Quote%20Request"
+class="btn">
+✉ REQUEST VIA GMAIL
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <p>
-        © 2026 <strong>IMPERIA V.I.S.</strong>
-        All Rights Reserved.
-    </p>
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">
+IMPERIA V.I.S.
+</div>
+
+<p>
+EVENT STAFFING & SECURITY SERVICES
+</p>
+
+<p style="margin-top:15px;">
+Your moment, our mission.
+</p>
+</div>
+
+
+<div>
+
+<h3>CONTACT US</h3>
+
+<ul class="footer-links">
+
+<li>
+📞 <a href="tel:+13475007180">
+347-500-7180
+</a>
+</li>
+
+<li>
+✉ <a href="mailto:familiaimperiavIS@gmail.com">
+familiaimperiavIS@gmail.com
+</a>
+</li>
+
+<li>
+📍 Maryland | Washington, D.C. | Virginia
+</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>FOLLOW US</h3>
+
+<div class="socials">
+
+<a
+class="social"
+href="https://instagram.com/familiaimperiavIS"
+target="_blank"
+aria-label="Instagram">
+IG
+</a>
+
+<a
+class="social"
+href="https://wa.me/13475007180"
+target="_blank"
+aria-label="WhatsApp">
+WA
+</a>
+
+<a
+class="social"
+href="mailto:familiaimperiavIS@gmail.com"
+aria-label="Gmail">
+@
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026
+<strong> IMPERIA V.I.S.</strong>
+All Rights Reserved.
+
+</div>
+
+</div>
 
 </footer>
-
 
 </body>
 </html>
